@@ -4,7 +4,6 @@ require('image')
 require('paths')
 
 require ('pl')
-require ('camera')
 
 torch.setdefaulttensortype('torch.FloatTensor')
 
@@ -16,6 +15,7 @@ options = lapp[[
    -w,--std                (default 0.24273)                  std for preprocessing
    -m,--network            (default overfeat.net)             pre-trained model
    -l,--labels             (default overfeat_label)       labels of categories
+   -i,--image              (default example.png)       image to process
 ]]
 
 -- If you do no have any models, pretrained overfeat model will be fetched
@@ -72,7 +72,7 @@ require 'qtuiloader'
 
 widget  = qtuiloader.load('g.ui')
 painter = qt.QtLuaPainter(widget.frame)
-display = require 'display'
+display = paths.dofile('display.lua')
 ui      = require 'ui'
 
 

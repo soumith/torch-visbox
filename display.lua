@@ -1,5 +1,9 @@
 local display = {}
-local source = image.Camera{}
+local source = {}
+
+function source:forward()
+   return image.load(options.image, 3)
+end
 -- function to update display
 function display.update()
    if ui.resize then
